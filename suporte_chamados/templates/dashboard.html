@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Dashboard</h2>
+    <canvas id="statusChart" width="400" height="200"></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById('statusChart').getContext('2d');
+    const statusData = {
+        labels: ['Aberto', 'Em andamento', 'Concluído', 'Cancelado'],
+        datasets: [{
+            label: 'Quantidade de Chamados por Status',
+            data: [
+                {{ status_count.Aberto }},
+                {{ status_count.Em_andamento }},
+                {{ status_count.Concluído }},
+                {{ status_count.Cancelado }}
+            ],
+            backgroundColor: ['#007bff', '#ffc107', '#28a745', '#dc3545'],
+            borderColor: ['#0056b3', '#cc9a06', '#1c7430', '#a71d2a'],
+            borderWidth: 1
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: statusData,
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+{% endblock %}

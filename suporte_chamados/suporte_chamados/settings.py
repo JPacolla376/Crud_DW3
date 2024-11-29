@@ -14,6 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+LOGIN_REDIRECT_URL = '/dashboard/'
+ROOT_URLCONF = 'suporte_chamados.urls'
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chamados',  # App de chamados
+    'chamados',  
+    'suporte_chamados',
 ]
 
 
@@ -73,7 +76,7 @@ TEMPLATES = [
 ]
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Diretório de arquivos estáticos
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Diretório estáticos
 
 
 WSGI_APPLICATION = 'suporte_chamados.wsgi.application'

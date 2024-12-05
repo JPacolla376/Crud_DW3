@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from chamados.models import Chamado
 
 
+
+
 # Página inicial
 def index(request):
     return render(request, 'index.html')

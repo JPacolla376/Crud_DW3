@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Novo Chamado</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" name="titulo" id="titulo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea name="descricao" id="descricao" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="classificacao" class="form-label">Classificação</label>
+            <select name="classificacao" id="classificacao" class="form-control">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Urgente">Urgente</option>
+                <option value="Emergência">Emergência</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="data_vencimento" class="form-label">Data de Vencimento</label>
+            <input type="date" name="data_vencimento" id="data_vencimento" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="anexo" class="form-label">Anexo</label>
+            <input type="file" name="anexo" id="anexo" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+{% endblock %}

@@ -36,8 +36,8 @@ Clone este repositório:
 
 bash
 Copy code
-git clone https://github.com/seu-usuario/sistema-chamados.git
-cd sistema-chamados
+git clone https://github.com/JPacolla376/Crud_DW3.git
+
 Crie um ambiente virtual e ative-o:
 
 bash
